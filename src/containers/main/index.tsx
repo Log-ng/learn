@@ -1,4 +1,4 @@
-import Board from '../../components/info-board';
+import { Board } from '../../components';
 
 const MainScreen = () => {
   return (
