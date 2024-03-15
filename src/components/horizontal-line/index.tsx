@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { DEFAULT_COLOR_LINE, DEFAULT_HEIGHT_LINE } from '../../common';
 
 interface HorizontalLineProp {

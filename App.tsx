@@ -1,15 +1,17 @@
-import { View } from 'react-native';
-import MainScreen from './src/containers/main';
+import { View, SafeAreaView } from 'react-native';
 import { NativeWindStyleSheet } from 'nativewind';
+import BottomTab from './src/navigators/bottom-tab';
 
 NativeWindStyleSheet.setOutput({
   default: 'native',
 });
 
-export default function App() {
+const App = () => {
   return (
-    <View className='flex-1 items-center justify-center bg-white'>
-      <MainScreen />
-    </View>
+    <SafeAreaView className='flex-1 bg-white'>
+      <BottomTab />
+    </SafeAreaView>
   );
-}
+};
+
+export default App;

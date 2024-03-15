@@ -30,7 +30,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
               size={35}
             />
           </View>
-          <View className='basis-1/2 pr-[5px]'>
+          <View className='basis-1/2 pr-[10px]'>
             <Text className='text-right w-full'>
               <SettingIcon name='player-settings' size={15} color='white' />
             </Text>
@@ -41,7 +41,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
           <View className='basis-1/2'>
             <Text className='text-white font-medium text-lg'>Food</Text>
           </View>
-          <View className='basis-1/2'>
+          <View className='basis-1/2 pr-[6px]'>
             <Text className='text-right w-full text-white text-lg'>
               2.100.000
             </Text>
@@ -60,7 +60,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
           <HorizontalLine />
         </View>
 
-        <View className='px-2 pb-1'>
+        <View className='px-2 pb-2'>
           <Text className='text-center text-white from-stone-100 text-base'>
             Next period: 5.000.000 - 01/03/2024
           </Text>
