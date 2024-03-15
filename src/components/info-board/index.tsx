@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { Bar } from 'react-native-progress';
 import { FoodIcon, SettingIcon } from '../../assets/icon';
 import AboutBoard from './AboutBoard';
+import HorizontalLine from '../horizontal-line';
 
 interface BoardProps {
   title: string;
@@ -19,7 +20,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
   };
 
   return (
-    <View className='bg-[#c5c5c5] rounded-lg'>
+    <View className='bg-[#C4C4C4] rounded-lg'>
       <View className='bg-[#4b8f9f] p-2 rounded-lg'>
         <View className='flex flex-row items-center'>
           <View className='mx-1 basis-1/2 mt-1'>
@@ -53,6 +54,15 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
           <View className='w-1/6'>
             <Text className='text-right text-white'>{progress * 100}%</Text>
           </View>
+        </View>
+
+        <View className='p-2 p-6 pb-4'>
+          <HorizontalLine />
+        </View>
+        <View className='px-2 pb-1'>
+          <Text className='text-center text-white from-stone-100 text-base'>
+            Next period: 5.000.000 - 01/03/2024
+          </Text>
         </View>
       </View>
 
