@@ -56,9 +56,10 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
           </View>
         </View>
 
-        <View className='p-2 p-6 pb-4'>
+        <View className='p-6 pb-4'>
           <HorizontalLine />
         </View>
+
         <View className='px-2 pb-1'>
           <Text className='text-center text-white from-stone-100 text-base'>
             Next period: 5.000.000 - 01/03/2024

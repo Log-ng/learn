@@ -1,10 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { DEFAULT_COLOR_LINE, DEFAULT_HEIGHT_LINE } from '../../common';
 
 interface HorizontalLineProp {
   color?: string;
-  height?: number;
+  height?: string;
 }
 
 const HorizontalLine: React.FC<HorizontalLineProp> = (props) => {
@@ -14,9 +14,12 @@ const HorizontalLine: React.FC<HorizontalLineProp> = (props) => {
   return (
     <>
       <View className='flex flex-row items-center'>
-        <View className={`flex-1 h-[${height}px] bg-${color}`} />
-        <View></View>
-        <View className={`flex-1 h-[${height}px] bg-${color}`} />
+        <View
+          className={`flex-1 h-[${height}px] bg-${color} rounded-right-md`}
+        />
+        <View
+          className={`flex-1 h-[${height}px] bg-${color} rounded-left-md`}
+        />
       </View>
     </>
   );
