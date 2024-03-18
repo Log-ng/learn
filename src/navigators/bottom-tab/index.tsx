@@ -2,8 +2,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MainScreen, LoginScreen } from '../../containers';
 import { HomeIcon, LoginIcon } from '../../assets/icon';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { NAVIGATORS_LABEL } from '..';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +13,7 @@ const BottomTab = () => {
     <View className='flex-1'>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName='Main'
+          initialRouteName={NAVIGATORS_LABEL.main}
           screenOptions={{
             tabBarHideOnKeyboard: true,
             headerShown: false,
@@ -20,67 +21,55 @@ const BottomTab = () => {
           sceneContainerStyle={{ backgroundColor: 'white' }}
         >
           <Tab.Screen
-            name='Main'
+            name={NAVIGATORS_LABEL.main}
             component={MainScreen}
             options={{
-              title: 'Main',
+              title:
+                typeof NAVIGATORS_LABEL.main == 'string'
+                  ? NAVIGATORS_LABEL.main
+                  : '',
               header: () => null,
               tabBarIcon: ({ focused }) => (
-                <HomeIcon
-                  name='home'
-                  size={35}
+                <HomeIcon.component
+                  name={HomeIcon.name}
+                  size={30}
                   color='#4b8f9f'
                   style={focused ? styles.navActive : styles.nav}
                 />
+              ),
+              tabBarLabel: ({ focused, color }) => (
+                <Text
+                  style={{ color: focused ? '#4b8f9f' : color, fontSize: 10 }}
+                >
+                  {NAVIGATORS_LABEL.main}
+                </Text>
               ),
             }}
           />
 
           <Tab.Screen
-            name='Login'
+            name={NAVIGATORS_LABEL.login}
             component={LoginScreen}
             options={{
-              title: 'Login',
+              title:
+                typeof NAVIGATORS_LABEL.login == 'string'
+                  ? NAVIGATORS_LABEL.login
+                  : '',
               tabBarIcon: ({ focused }) => (
-                <LoginIcon
+                <LoginIcon.component
                   className='bg-red-500'
-                  name='login'
-                  size={35}
+                  name={LoginIcon.name}
+                  size={30}
                   color='#4b8f9f'
                   style={focused ? styles.navActive : styles.nav}
                 />
               ),
-            }}
-          />
-
-          <Tab.Screen
-            name='Test1'
-            component={LoginScreen}
-            options={{
-              title: 'Login',
-              tabBarIcon: ({ focused }) => (
-                <LoginIcon
-                  name='login'
-                  size={35}
-                  color='#4b8f9f'
-                  style={focused ? styles.navActive : styles.nav}
-                />
-              ),
-            }}
-          />
-
-          <Tab.Screen
-            name='Test2'
-            component={LoginScreen}
-            options={{
-              title: 'Login',
-              tabBarIcon: ({ focused }) => (
-                <LoginIcon
-                  name='login'
-                  size={35}
-                  color='#4b8f9f'
-                  style={focused ? styles.navActive : styles.nav}
-                />
+              tabBarLabel: ({ focused, color }) => (
+                <Text
+                  style={{ color: focused ? '#4b8f9f' : color, fontSize: 10 }}
+                >
+                  {NAVIGATORS_LABEL.login}
+                </Text>
               ),
             }}
           />
@@ -102,7 +91,8 @@ const styles = StyleSheet.create({
   nav: {
     borderRadius: 5,
     backgroundColor: 'white',
-    borderTopWidth: 1.5,
+    borderStyle: 'solid',
+    borderColor: 'white',
   },
 });
 export default BottomTab;

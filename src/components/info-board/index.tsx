@@ -24,15 +24,19 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
       <View className='bg-[#4b8f9f] p-2 rounded-lg'>
         <View className='flex flex-row items-center'>
           <View className='mx-1 basis-1/2 mt-1'>
-            <FoodIcon
+            <FoodIcon.component
               style={{ color: 'white' }}
-              name='food-fork-drink'
+              name={FoodIcon.name}
               size={35}
             />
           </View>
           <View className='basis-1/2 pr-[10px]'>
             <Text className='text-right w-full'>
-              <SettingIcon name='player-settings' size={15} color='white' />
+              <SettingIcon.component
+                name='player-settings'
+                size={15}
+                color='white'
+              />
             </Text>
           </View>
         </View>

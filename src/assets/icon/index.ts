@@ -4,10 +4,18 @@ import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-const FoodIcon = MaterialCommunityIcons;
-const SettingIcon = Fontisto;
-const InfoIcon = AntDesign;
-const HomeIcon = FontAwesome;
-const LoginIcon = Entypo;
+interface Icon {
+  component: any;
+  name: string;
+}
 
-export { FoodIcon, SettingIcon, InfoIcon, HomeIcon, LoginIcon };
+const FoodIcon: Icon = {
+  component: MaterialCommunityIcons,
+  name: 'food-fork-drink',
+};
+const SettingIcon: Icon = { component: Fontisto, name: 'player-settings' };
+const InfoIcon: Icon = { component: AntDesign, name: 'update-later' };
+const HomeIcon: Icon = { component: FontAwesome, name: 'home' };
+const LoginIcon: Icon = { component: Entypo, name: 'login' };
+
+export { FoodIcon, SettingIcon, InfoIcon, HomeIcon, LoginIcon, Icon };

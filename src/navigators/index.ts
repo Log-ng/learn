@@ -3,4 +3,9 @@ const NAVIGATORS = {
   login: '/login',
 };
 
-export { NAVIGATORS };
+const NAVIGATORS_LABEL = {
+  main: 'Main',
+  login: 'Login',
+};
+
+export { NAVIGATORS, NAVIGATORS_LABEL };
