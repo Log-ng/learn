@@ -1,4 +1,4 @@
-import { View, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { NativeWindStyleSheet } from 'nativewind';
 import BottomTab from './src/navigators/bottom-tab';
 

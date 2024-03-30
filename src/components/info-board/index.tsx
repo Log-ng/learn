@@ -4,20 +4,19 @@ import { Bar } from 'react-native-progress';
 import { FoodIcon, SettingIcon } from '../../assets/icon';
 import AboutBoard from './AboutBoard';
 import HorizontalLine from '../horizontal-line';
+// import { NAVIGATORS, NAVIGATORS_LABEL } from '../../navigators';
+import { useRouter } from 'expo-router';
+import { Link } from '@react-navigation/native';
 
 interface BoardProps {
   title: string;
   info: string;
 }
 
-const Board: React.FC<BoardProps> = (props: BoardProps) => {
-  const { title, info } = props;
+const Board: React.FC<BoardProps> = ({ title, info }) => {
+  const router = useRouter();
 
   const [progress, setProgress] = useState(0.4);
-
-  const handlePress = () => {
-    setProgress((prevProgress) => prevProgress + 0.1);
-  };
 
   return (
     <View className='bg-[#C4C4C4] rounded-lg'>
@@ -31,12 +30,23 @@ const Board: React.FC<BoardProps> = (props: BoardProps) => {
             />
           </View>
           <View className='basis-1/2 pr-[10px]'>
-            <Text className='text-right w-full'>
-              <SettingIcon.component
-                name='player-settings'
-                size={15}
-                color='white'
-              />
+            <Text
+              className='text-right w-full'
+              // onPress={() => router.replace(`src/containers/main`)}
+            >
+              <Link
+                to={{
+                  screen: 'Update',
+                  // params: { id: 'jane' },
+                  // screen: 'Main'
+                }}
+              >
+                <SettingIcon.component
+                  name={SettingIcon.name}
+                  size={15}
+                  color='white'
+                />
+              </Link>
             </Text>
           </View>
         </View>

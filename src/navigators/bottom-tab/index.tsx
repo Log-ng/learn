@@ -1,14 +1,15 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MainScreen, LoginScreen } from '../../containers';
+import { LoginScreen } from '../../containers';
 import { HomeIcon, LoginIcon } from '../../assets/icon';
 import { StyleSheet, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { NAVIGATORS_LABEL } from '..';
+import MainStack from './MainStack';
 
 const Tab = createBottomTabNavigator();
 
-const BottomTab = () => {
+const BottomTab: React.FC = () => {
   return (
     <View className='flex-1'>
       <NavigationContainer>
@@ -22,7 +23,7 @@ const BottomTab = () => {
         >
           <Tab.Screen
             name={NAVIGATORS_LABEL.main}
-            component={MainScreen}
+            component={MainStack}
             options={{
               title:
                 typeof NAVIGATORS_LABEL.main == 'string'
@@ -73,8 +74,6 @@ const BottomTab = () => {
               ),
             }}
           />
-
-          {/* <Tab.Screen name='Login' component={LoginScreen} /> */}
         </Tab.Navigator>
       </NavigationContainer>
     </View>
