@@ -8,9 +8,9 @@ const Stack = createNativeStackNavigator();
 
 const MainStack: React.FC = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={NAVIGATORS_LABEL.main}>
       <Stack.Screen
-        name={`${NAVIGATORS_LABEL.main}_`}
+        name={NAVIGATORS_LABEL.main}
         component={MainScreen}
         options={{
           title:

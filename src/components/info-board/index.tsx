@@ -4,8 +4,7 @@ import { Bar } from 'react-native-progress';
 import { FoodIcon, SettingIcon } from '../../assets/icon';
 import AboutBoard from './AboutBoard';
 import HorizontalLine from '../horizontal-line';
-// import { NAVIGATORS, NAVIGATORS_LABEL } from '../../navigators';
-import { useRouter } from 'expo-router';
+import { NAVIGATORS_LABEL } from '../../navigators';
 import { Link } from '@react-navigation/native';
 
 interface BoardProps {
@@ -14,8 +13,6 @@ interface BoardProps {
 }
 
 const Board: React.FC<BoardProps> = ({ title, info }) => {
-  const router = useRouter();
-
   const [progress, setProgress] = useState(0.4);
 
   return (
@@ -30,20 +27,16 @@ const Board: React.FC<BoardProps> = ({ title, info }) => {
             />
           </View>
           <View className='basis-1/2 pr-[10px]'>
-            <Text
-              className='text-right w-full'
-              // onPress={() => router.replace(`src/containers/main`)}
-            >
+            <Text className='text-right w-full'>
               <Link
                 to={{
-                  screen: 'Update',
-                  // params: { id: 'jane' },
-                  // screen: 'Main'
+                  // @ts-ignore
+                  screen: NAVIGATORS_LABEL.update,
                 }}
               >
                 <SettingIcon.component
                   name={SettingIcon.name}
-                  size={15}
+                  size={20}
                   color='white'
                 />
               </Link>

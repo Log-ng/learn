@@ -5,6 +5,7 @@ const NAVIGATORS = {
 };
 
 const NAVIGATORS_LABEL = {
+  mainStack: 'Main-Stack',
   main: 'Main',
   login: 'Login',
   update: 'Update',

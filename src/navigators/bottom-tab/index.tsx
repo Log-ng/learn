@@ -14,7 +14,7 @@ const BottomTab: React.FC = () => {
     <View className='flex-1'>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName={NAVIGATORS_LABEL.main}
+          initialRouteName={NAVIGATORS_LABEL.mainStack}
           screenOptions={{
             tabBarHideOnKeyboard: true,
             headerShown: false,
@@ -22,7 +22,7 @@ const BottomTab: React.FC = () => {
           sceneContainerStyle={{ backgroundColor: 'white' }}
         >
           <Tab.Screen
-            name={NAVIGATORS_LABEL.main}
+            name={NAVIGATORS_LABEL.mainStack}
             component={MainStack}
             options={{
               title:

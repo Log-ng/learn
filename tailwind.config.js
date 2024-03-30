@@ -12,6 +12,7 @@ module.exports = {
         blue: '#1fb6ff',
         purple: '#7e5bef',
         gray: '#8492a6',
+        mainColor: '#4b8f9f',
       },
       spacing: {
         '2x': '20px',
@@ -19,6 +20,9 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '40px',
+      },
+      fontSize: {
+        breadcrumb: '15px',
       },
     },
   },
