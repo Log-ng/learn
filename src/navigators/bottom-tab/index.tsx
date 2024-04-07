@@ -1,18 +1,26 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { LoginScreen } from '../../containers';
-import { HomeIcon, LoginIcon } from '../../assets/icon';
+import { HomeIcon, LoginIcon } from '../../assets';
 import { StyleSheet, View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { NAVIGATORS_LABEL } from '..';
 import MainStack from './MainStack';
+import { COLOR_THEME } from '../../assets';
 
 const Tab = createBottomTabNavigator();
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: COLOR_THEME,
+  },
+};
 
 const BottomTab: React.FC = () => {
   return (
     <View className='flex-1'>
-      <NavigationContainer>
+      <NavigationContainer theme={theme}>
         <Tab.Navigator
           initialRouteName={NAVIGATORS_LABEL.mainStack}
           screenOptions={{
@@ -34,13 +42,13 @@ const BottomTab: React.FC = () => {
                 <HomeIcon.component
                   name={HomeIcon.name}
                   size={30}
-                  color='#4b8f9f'
+                  color={COLOR_THEME}
                   style={focused ? styles.navActive : styles.nav}
                 />
               ),
               tabBarLabel: ({ focused, color }) => (
                 <Text
-                  style={{ color: focused ? '#4b8f9f' : color, fontSize: 10 }}
+                  style={{ color: focused ? COLOR_THEME : color, fontSize: 10 }}
                 >
                   {NAVIGATORS_LABEL.main}
                 </Text>
@@ -61,13 +69,13 @@ const BottomTab: React.FC = () => {
                   className='bg-red-500'
                   name={LoginIcon.name}
                   size={30}
-                  color='#4b8f9f'
+                  color={COLOR_THEME}
                   style={focused ? styles.navActive : styles.nav}
                 />
               ),
               tabBarLabel: ({ focused, color }) => (
                 <Text
-                  style={{ color: focused ? '#4b8f9f' : color, fontSize: 10 }}
+                  style={{ color: focused ? COLOR_THEME : color, fontSize: 10 }}
                 >
                   {NAVIGATORS_LABEL.login}
                 </Text>
@@ -84,7 +92,7 @@ const styles = StyleSheet.create({
   navActive: {
     borderRadius: 5,
     borderStyle: 'solid',
-    borderColor: '#4b8f9f',
+    borderColor: COLOR_THEME,
     borderWidth: 1.5,
   },
   nav: {

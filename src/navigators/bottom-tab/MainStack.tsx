@@ -1,6 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MainScreen, LoginScreen } from '../../containers';
+import { MainScreen } from '../../containers';
 import { NAVIGATORS_LABEL } from '..';
 import { Updating } from '../../components';
 

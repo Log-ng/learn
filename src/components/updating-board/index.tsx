@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  TextInput,
-  Pressable,
-  GestureResponderEvent,
-} from 'react-native';
-import { BackIcon } from '../../assets/icon';
+import { View, TextInput, GestureResponderEvent, Text } from 'react-native';
+import Button from '../button';
+import { BackIcon, COLOR_THEME } from '../../assets';
 import { NAVIGATORS_LABEL } from '../../navigators';
 import { Link } from '@react-navigation/native';
 
@@ -29,7 +24,7 @@ const Updating: React.FC = () => {
             <BackIcon.component
               name={BackIcon.name}
               size={30}
-              color='#4b8f9f'
+              color={COLOR_THEME}
             />
           </Link>
         </View>
@@ -42,15 +37,18 @@ const Updating: React.FC = () => {
         className='rounded-md border-[1.5px] h-[65px] mb-4 border-mainColor text-base px-3'
         onChangeText={onChangeNumber}
         value={number}
-        placeholder='Field'
-        selectionColor='#4b8f9f'
+        placeholder='Section'
+        selectionColor={COLOR_THEME}
       />
-      <Pressable
-        onPress={onPress}
-        className='items-center justify-center px-[32px] py-[12px] rounded bg-mainColor'
-      >
-        <Text className='text-lg font-bold text-white '>Save</Text>
-      </Pressable>
+
+      <Button onPress={onPress} title='Save' backgroundColor='bg-mainColor' />
+      <View className='mt-2'>
+        <Button
+          onPress={() => {}}
+          title='Cancel'
+          backgroundColor='bg-red-600'
+        />
+      </View>
     </View>
   );
 };

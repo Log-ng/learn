@@ -22,5 +22,29 @@ const BackIcon: Icon = {
   component: Ionicons,
   name: 'arrow-back-circle-outline',
 };
+const MoneyIcon: Icon = {
+  component: FontAwesome,
+  name: 'money',
+};
 
-export { FoodIcon, SettingIcon, InfoIcon, HomeIcon, LoginIcon, BackIcon, Icon };
+const icons = [
+  FoodIcon,
+  SettingIcon,
+  InfoIcon,
+  HomeIcon,
+  LoginIcon,
+  BackIcon,
+  MoneyIcon,
+];
+
+export {
+  icons,
+  FoodIcon,
+  SettingIcon,
+  InfoIcon,
+  HomeIcon,
+  LoginIcon,
+  BackIcon,
+  MoneyIcon,
+  Icon,
+};

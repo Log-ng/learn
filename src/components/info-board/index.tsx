@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { Bar } from 'react-native-progress';
-import { FoodIcon, SettingIcon } from '../../assets/icon';
 import AboutBoard from './AboutBoard';
 import HorizontalLine from '../horizontal-line';
 import { NAVIGATORS_LABEL } from '../../navigators';
 import { Link } from '@react-navigation/native';
+import { FoodIcon, SettingIcon } from '../../assets';
 
 interface BoardProps {
   title: string;
@@ -17,7 +17,7 @@ const Board: React.FC<BoardProps> = ({ title, info }) => {
 
   return (
     <View className='bg-[#C4C4C4] rounded-lg'>
-      <View className='bg-[#4b8f9f] p-2 rounded-lg'>
+      <View className='bg-mainColor p-2 rounded-lg'>
         <View className='flex flex-row items-center'>
           <View className='mx-1 basis-1/2 mt-1'>
             <FoodIcon.component
