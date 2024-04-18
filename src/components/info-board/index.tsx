@@ -6,6 +6,7 @@ import HorizontalLine from '../horizontal-line';
 import { NAVIGATORS_LABEL } from '../../navigators';
 import { Link } from '@react-navigation/native';
 import { FoodIcon, SettingIcon } from '../../assets';
+import { SizeType } from '../../common';
 
 interface BoardProps {
   title: string;
@@ -64,7 +65,7 @@ const Board: React.FC<BoardProps> = ({ title, info }) => {
         </View>
 
         <View className='p-6 pb-4'>
-          <HorizontalLine />
+          <HorizontalLine size={SizeType.small} />
         </View>
 
         <View className='px-2 pb-2'>
